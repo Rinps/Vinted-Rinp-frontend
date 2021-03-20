@@ -1,0 +1,41 @@
+.Offer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  color: #999999;
+  margin: 5px;
+  font-size: 12px;
+}
+
+.user {
+  display: flex;
+  width: 100%;
+}
+
+.product {
+  width: 100%;
+}
+
+.price {
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1bb6bf;
+  border: 2px solid #1bb6bf;
+  box-sizing: border-box;
+  padding: 5px;
+  margin-top: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  width: 90px;
+}

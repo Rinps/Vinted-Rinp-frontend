@@ -1,38 +1,383 @@
-.App {
+/* =================== General rules =================== */
+p,
+h1,
+h2,
+h3,
+button {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* =================== Header =================== */
+.Header {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.Header img {
+  width: 100px;
+  max-height: 50px;
+}
+
+.Header form {
+  display: flex;
+  justify-content: space-around;
+  width: 65%;
+}
+
+.searchBar {
+  width: 75%;
+  height: 36px;
+  display: flex;
+}
+
+.submitSearch {
+  border: none;
+  background-color: #f5f6f7;
+  color: #838384;
+  flex: 1;
+  height: 100%;
+}
+
+.searchText {
+  height: 100%;
+  background-color: #f5f6f7;
+  color: #838384;
+  flex: 16;
+  border: hidden;
+  font-size: 18px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.searchText:focus {
+  outline: none;
+}
+
+.priceLimit {
+  box-sizing: border-box;
+  width: 75px;
+  height: 18px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Header > form > select {
+  width: 200px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.offersLimit {
+  width: 50px;
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Header .setUser {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 152px;
+  height: 26px;
+  border: #1bb6bf solid 1px;
+  border-radius: 2px;
+}
+
+#signup,
+#login {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1bb6bf;
+  font-size: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  height: 14px;
+  width: 50%;
+}
+
+#signup {
+  border-right: 1px #1bb6bf solid;
+}
+
+#logout {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: coral;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid coral;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 32px;
+}
+
+.headerLink {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #1bb6bf;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 32px;
+}
+
+/* =================== Homepage rules =================== */
+/* =================== Title rules =================== */
+.HomePage > .banner {
+  width: 100wh;
+  height: 500px;
+  background-image: url("./assets/images/picture-home.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+.HomePage > .banner > div {
+  width: 395px;
+  height: 230px;
+  background-color: white;
+  position: absolute;
+  top: 150px;
+  left: 200px;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.homePage,
+h2 {
+  font-size: 34px;
+  line-height: 28.3px;
+  margin: 10px;
+}
+
+.publishLink {
+  width: 175px;
+  height: 40px;
+  background-color: #2baeb7;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 13.3px;
+  border: hidden;
+  text-decoration: none;
+}
+
+/* =================== Offers rules =================== */
+.offersList {
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: auto;
+}
+
+.Offer {
+  width: 230px;
+  height: 450px;
+  height: 0%;
+  margin: 20px;
+}
+
+.user {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.user > span {
+  font-size: 12px;
+  line-height: 10px;
+  color: #999999;
+}
+
+.user > img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.price {
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.Offer > img {
+  width: 230px;
+  height: 360px;
+  object-fit: cover;
+}
+
+/* =================== OfferPage rules =================== */
+/* =================== Main rules =================== */
+.OfferPage {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ebedee;
+}
+
+.OfferPage > img {
+  width: 400px;
+  height: 700px;
+  object-fit: cover;
+  margin: 50px;
+}
+
+/* =================== OfferPage rules =================== */
+/* =================== offerSheet rules =================== */
+.offerSheet {
+  background-color: white;
+  width: 400px;
+  height: 0%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 50px;
+}
+
+.offerSheet > h2 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.productDetails {
+  width: 100%;
+  border-top: 1px solid #666666;
+  border-bottom: 1px solid #666666;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-around;
+}
+
+.detailKey {
+  flex: 1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  line-height: 19.5px;
+  color: #666666;
+}
+
+.detailValue {
+  flex: 1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  line-height: 19.5px;
+  font-weight: bold;
+  color: #666666;
+}
+
+.productDescription > h3 {
+  font-size: 16px;
+  line-height: 13.3px;
+  color: black;
+}
+
+.productDescription > p {
+  font-size: 16px;
+  line-height: 13.3px;
+  color: #666666;
+}
+
+/* =================== OfferPage rules =================== */
+/* =================== owner rules =================== */
+.owner {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.owner > img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+/* =================== Login and Signup rules =================== */
+.LoginPage,
+.SignupPage {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 400px;
+  margin: auto;
+}
+
+.textInput {
+  width: 265px;
+  height: 35px;
+  font-size: 16px;
+  margin: 10px;
+  border-style: none;
+  border-bottom: 1px solid gray;
+}
+
+.textInput:focus {
+  outline: none;
+  border-bottom: 1px solid #1bb6bf;
+}
+
+.warning {
+  color: coral;
+  text-align: center;
+}
+
+.LoginPage .submit, SignupPage .submit {
+  width: 255px;
+  height: 43px;
+  font-size: 16px;
+  background-color: #1bb6bf;
   color: white;
+  border-radius: 4px;
+  border: none;
+  margin: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.submit:hover {
+  text-decoration: underline;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Link {
+  color: #1bb6bf;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.checkbox {
+  display: flex;
+}
+
+.SignupPage h2 {
+  font-size: 16px;
 }

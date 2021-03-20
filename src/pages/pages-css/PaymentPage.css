@@ -1,0 +1,71 @@
+/* ======================= General rules ======================= */
+p {
+  color: black;
+  font-size: 14px;
+}
+
+.PaymentPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  margin: auto;
+}
+
+.sumUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  border-bottom: #999999 1px solid;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.detailLine {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.total {
+  width: 75%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.paymentForm {
+  border-bottom: solid grey 1px;
+  margin: 10px;
+  width: 400px;
+  height: 30px;
+}
+
+.payment {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitPayment {
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1bb6bf;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: hidden;
+  border-radius: 5px;
+  margin: 10px;
+}
