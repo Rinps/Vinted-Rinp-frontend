@@ -32,7 +32,7 @@ const PaymentPage = (props) => {
       // Now thats we have the token, send the server the request... If we do have the token, of course!
       if (stripeToken) {
         const response = await axios.post(
-          "http://localhost:3150/payment",
+          `{process.env.REACT_APP_BACKEND_URL}/payment`,
           {
             stripeToken: stripeToken,
             id: offerID,

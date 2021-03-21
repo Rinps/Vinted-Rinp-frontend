@@ -87,9 +87,13 @@ const PublishPage = (props) => {
       formData.append("condition", newCondition);
 
       // Then simply send the request and send the user back on the home page.
-      await axios.post(`http://localhost:3150/offers/publish`, formData, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/offers/publish`,
+        formData,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       history.push("/");
     } else {
       setValidOffer(false);

@@ -26,7 +26,9 @@ const Offer = (props) => {
   useEffect(() => {
     // Get the offer details from the server, using its ID.
     const fetchData = async () => {
-      const response = await axios.get(`http://localhost:3150${requestURL}`);
+      const response = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}${requestURL}`
+      );
       const offer = response.data;
 
       setProduct(offer);

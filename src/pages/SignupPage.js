@@ -24,7 +24,7 @@ const SignupPage = () => {
     event.preventDefault();
     await axios({
       method: "post",
-      url: "http://localhost:3150/user/signup",
+      url: `${process.env.REACT_APP_BACKEND_URL}/user/signup`,
       headers: {},
       data: {
         userName: username,

@@ -44,7 +44,7 @@ const Header = (props) => {
   const handleSubmitSearch = (event) => {
     event.preventDefault();
     const newString = [
-      `http://localhost:3150/offers/search?offersLimit=${offersLimit}&sort=${sort}`,
+      `process.env.REACT_APP_BACKEND_URL/offers/search?offersLimit=${offersLimit}&sort=${sort}`,
     ];
     if (search) {
       newString.push(`&title=${search}`);
