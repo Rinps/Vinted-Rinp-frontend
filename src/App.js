@@ -31,38 +31,37 @@ const App = () => {
   // Create a Stripe promise in order to allow a user to make a payment.
   const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC);
 
-  const fetchData = async () => {
-    // Create a new array, so that React update the state when setOffers is used.
-    const newOffers = [];
-    const serverResponseOffers = await axios.get(searchURL);
-    const serverResponseUsers = await axios.get(
-      `${process.env.REACT_APP_BACKEND_URL}/users`
-    );
-    const usersData = serverResponseUsers.data;
-
-    // Each offer that the server gives us must be pushed into the newOffers array before we set the state.
-    serverResponseOffers.data.forEach((item) => {
-      // Get the owner of the offer.
-      const owner = usersData.find((element) => item.owner === element._id);
-
-      // Get the owner name and picture.
-      const ownerName = owner.account.username;
-      const ownerPicture = owner.account.avatar;
-
-      // We're going to add the owner name and picture to each offer that we want to display.
-      const offerToPush = item;
-      offerToPush.ownerName = ownerName;
-      offerToPush.ownerPicture = ownerPicture;
-
-      newOffers.push(offerToPush);
-    });
-    setOffers(newOffers);
-    setIsLoading(false);
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      // Create a new array, so that React update the state when setOffers is used.
+      const newOffers = [];
+      const serverResponseOffers = await axios.get(searchURL);
+      const serverResponseUsers = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/users`
+      );
+      const usersData = serverResponseUsers.data;
+
+      // Each offer that the server gives us must be pushed into the newOffers array before we set the state.
+      serverResponseOffers.data.forEach((item) => {
+        // Get the owner of the offer.
+        const owner = usersData.find((element) => item.owner === element._id);
+
+        // Get the owner name and picture.
+        const ownerName = owner.account.username;
+        const ownerPicture = owner.account.avatar;
+
+        // We're going to add the owner name and picture to each offer that we want to display.
+        const offerToPush = item;
+        offerToPush.ownerName = ownerName;
+        offerToPush.ownerPicture = ownerPicture;
+
+        newOffers.push(offerToPush);
+      });
+      setOffers(newOffers);
+      setIsLoading(false);
+    };
     fetchData();
-  }, [debouncedSearchURL]);
+  }, [debouncedSearchURL, searchURL]);
 
   useEffect(() => {
     if (Cookies.get("vinted-token")) {
