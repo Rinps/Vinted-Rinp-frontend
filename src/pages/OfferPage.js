@@ -18,20 +18,22 @@ const Offer = (props) => {
     objectKeys.map((item) => {
       const newObject = { [item]: object[item] };
       newArray.push(newObject);
+      return newArray;
     });
     return newArray;
   };
 
-  // Get the offer details from the server, using its ID.
-  const fetchData = async () => {
-    const response = await axios.get(`http://localhost:3150${requestURL}`);
-    const offer = response.data;
+  useEffect(() => {
+    // Get the offer details from the server, using its ID.
+    const fetchData = async () => {
+      const response = await axios.get(`http://localhost:3150${requestURL}`);
+      const offer = response.data;
 
-    setProduct(offer);
-    setIsLoading(false);
-  };
-
-  useEffect(() => fetchData(), []);
+      setProduct(offer);
+      setIsLoading(false);
+    };
+    fetchData();
+  }, [requestURL]);
 
   return isLoading ? (
     <p>Loading for now (and maybe FOREVER MOUAHAHAHAHAHAHAHA!</p>
