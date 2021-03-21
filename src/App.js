@@ -22,7 +22,9 @@ const App = () => {
   // Create states.
   const [token, setToken] = useState();
   const [offers, setOffers] = useState([]);
-  const [searchURL, setSearchURL] = useState("http://localhost:3150/offers");
+  const [searchURL, setSearchURL] = useState(
+    `${process.env.REACT_APP_BACKEND_URL}/offers`
+  );
   const [isLoading, setIsLoading] = useState(true);
   const [debouncedSearchURL] = useDebounce(searchURL, 2000);
 
@@ -33,7 +35,9 @@ const App = () => {
     // Create a new array, so that React update the state when setOffers is used.
     const newOffers = [];
     const serverResponseOffers = await axios.get(searchURL);
-    const serverResponseUsers = await axios.get("http://localhost:3150/users");
+    const serverResponseUsers = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/users`
+    );
     const usersData = serverResponseUsers.data;
 
     // Each offer that the server gives us must be pushed into the newOffers array before we set the state.

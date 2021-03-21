@@ -59,10 +59,6 @@ const PublishPage = (props) => {
     setNewColor(event.target.value);
   };
 
-  const handlePictureChange = (event) => {
-    setNewPicture(event.target.files[0]);
-  };
-
   // Form submit handler.
   const handleSubmit = async (event) => {
     event.preventDefault();
