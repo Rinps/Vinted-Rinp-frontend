@@ -44,7 +44,9 @@ const App = () => {
       // Each offer that the server gives us must be pushed into the newOffers array before we set the state.
       serverResponseOffers.data.forEach((item) => {
         // Get the owner of the offer.
-        const owner = usersData.find((element) => item.owner === element._id);
+        const owner = usersData.find((element) => {
+          console.log("element", element);
+          return (item.owner === element._id)});
 
         // Get the owner name and picture.
         console.log("item", item);
