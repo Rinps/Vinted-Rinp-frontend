@@ -47,6 +47,7 @@ const App = () => {
         const owner = usersData.find((element) => item.owner === element._id);
 
         // Get the owner name and picture.
+        console.log("item", item);
         console.log("owner", owner);
         const ownerName = owner.account.username;
         const ownerPicture = owner.account.avatar;
