@@ -40,6 +40,7 @@ const App = () => {
         `${process.env.REACT_APP_BACKEND_URL}/users`
       );
       const usersData = serverResponseUsers.data;
+      console.log("usersData", usersData);
 
       // Each offer that the server gives us must be pushed into the newOffers array before we set the state.
       serverResponseOffers.data.forEach((item) => {
