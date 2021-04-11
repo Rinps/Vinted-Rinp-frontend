@@ -61,15 +61,13 @@ const App = () => {
       setIsLoading(false);
     };
     fetchData();
-  }, [debouncedSearchURL, searchURL]);
-
-  useEffect(() => {
-    if (Cookies.get("vinted-token")) {
+     if (Cookies.get("vinted-token")) {
       setToken(Cookies.get("vinted-token"));
     } else {
       setToken(false);
     }
-  }, []);
+  }, [debouncedSearchURL, searchURL]);
+
 
   return (
     // Create the nav list containing every pages of the website.
