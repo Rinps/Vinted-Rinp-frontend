@@ -40,18 +40,14 @@ const App = () => {
         `${process.env.REACT_APP_BACKEND_URL}/users`
       );
       const usersData = serverResponseUsers.data;
-      console.log("usersData", usersData);
 
       // Each offer that the server gives us must be pushed into the newOffers array before we set the state.
       serverResponseOffers.data.forEach((item) => {
         // Get the owner of the offer.
         const owner = usersData.find((element) => {
-          console.log("element", element);
-          return (item.owner === element._id)});
+          return (item.owner === element.id)});
 
         // Get the owner name and picture.
-        console.log("item", item);
-        console.log("owner", owner);
         const ownerName = owner.account.username;
         const ownerPicture = owner.account.avatar;
 
